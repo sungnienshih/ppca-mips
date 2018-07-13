@@ -2,8 +2,6 @@
 #define PARSER
 #include<cstdio>
 #include<iostream>
-#include<map>
-#include<vector>
 #include<cstring>
 #include<sstream>
 #include"algo.hpp"
@@ -15,14 +13,13 @@ extern map<string, int> labels;
 extern map<string, int> pointers;
 extern vector<int> labval;
 extern vector<int> ptrval;
-extern int cur, heapptr;
-int curlabel = 0, curpointer = 0;
+extern int curline, heapptr;
 
-enum command{ALIGN = 1, ASCII, ASCIIZ, BYTE, HALF, WORD, SPACE, DATA, TEXT, ADD, ADDU, ADDIU, SUB, SUBU, MUL, 
+int curlabel = 0, curpointer = 0;
+enum command{ALIGN = 233, ASCII, ASCIIZ, BYTE, HALF, WORD, SPACE, DATA, TEXT, ADD, ADDU, ADDIU, SUB, SUBU, MUL, 
 MULU, DIV, DIVU, XOR, XORU, NEG, NEGU, REM, REMU, LI, SEQ, SGE, SGT, SLE, SLT, SNE, B, BEQ, BNE, BGE, BLE, BGT, 
 BLT, BEQZ, BNEZ, BLEZ, BGEZ, BGTZ, BLTZ, J, JR, JAL, JALR, LA, LB, LH, LW, SB, SH, SW, MOVE, MFHI, MFLO, NOP, 
-SYSCALL, MAIN = 502};
-
+SYSCALL, MAIN = 666};
 bool readline(ifstream& fs, int sys)
 {
     string tot;
@@ -94,13 +91,13 @@ bool readline(ifstream& fs, int sys)
 		{
 			if (labels.find(typ) == labels.end())
 			{
-				labval.push_back(cur);
+				labval.push_back(curline);
 				labels[typ] = curlabel;
 				curlabel++;
 			}
 			else
 			{
-				labval[labels[typ]] = cur;
+				labval[labels[typ]] = curline;
 			}
 		}
 	}
@@ -403,4 +400,3 @@ bool readline(ifstream& fs, int sys)
     return 1;
 }
 #endif
-
