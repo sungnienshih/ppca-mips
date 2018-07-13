@@ -3,6 +3,6 @@ prom = code
 deps = mips-main.cpp
 $(prom):$(deps)
 	g++ -o $(prom) $(deps) -O3 -std=c++14
-
+.PHONY : clean
 clean:
 	rm -rf $(prom)
