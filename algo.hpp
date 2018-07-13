@@ -1,5 +1,6 @@
 #ifndef ALGORITHMS
 #define ALGORITHMS
+
 #include<vector>
 #include<map>
 #include<algorithm>
