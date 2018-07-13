@@ -1,6 +1,6 @@
 cc=g++
 prom = code
-deps = main.cpp
+deps = mips-main.cpp
 $(prom):$(deps)
 	g++ -o $(prom) $(deps) -O3 -std=c++14
 
