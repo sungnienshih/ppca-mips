@@ -1,5 +1,5 @@
-#ifndef SCANNER
-#define SCANNER
+#ifndef PARSER
+#define PARSER
 #include<cstdio>
 #include<iostream>
 #include<map>
