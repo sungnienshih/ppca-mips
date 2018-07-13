@@ -1,5 +1,6 @@
 #ifndef LEXER
 #define LEXER
+
 #include<cmath>
 #include<vector>
 #include<map>
@@ -9,7 +10,7 @@
 #include"algo.hpp"
 
 extern int registers[36];
-extern char memory[5000002];
+extern char memory[4200002];
 extern int heapptr, stackptr;
 
 void align(int n)
